@@ -1,169 +1,3 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">-->
-<!--    <modelVersion>4.0.0</modelVersion>-->
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>3.0.0</version>-->
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-<!--    </parent>-->
-<!--    <groupId>com.example</groupId>-->
-<!--    <artifactId>raceTrack</artifactId>-->
-<!--    <version>0.0.1-SNAPSHOT</version>-->
-<!--    <name>myHrPortal</name>-->
-<!--    <description>raceTrack</description>-->
-<!--    <properties>-->
-<!--        <spring-cloud-azure.version>4.3.0</spring-cloud-azure.version>-->
-<!--    </properties>-->
-<!--    <dependencies>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-oauth2-client</artifactId>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--            <version>2.7.1</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.security</groupId>-->
-<!--            <artifactId>spring-security-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; sql connect area &ndash;&gt;-->
-
-<!--        &lt;!&ndash; sql connect area &ndash;&gt;-->
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa &ndash;&gt;-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.data</groupId>-->
-<!--            <artifactId>spring-data-jpa</artifactId>-->
-<!--            <version>2.7.2</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.postgresql</groupId>-->
-<!--            <artifactId>postgresql</artifactId>-->
-<!--            <version>42.4.1</version>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.modelmapper/modelmapper &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.modelmapper</groupId>-->
-<!--            <artifactId>modelmapper</artifactId>-->
-<!--            <version>3.1.0</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>com.amazonaws</groupId>-->
-<!--            <artifactId>aws-java-sdk</artifactId>-->
-<!--            <version>1.12.239</version>-->
-<!--        </dependency>-->
-
-<!--    </dependencies>-->
-
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--            &lt;!&ndash;			<plugin>&ndash;&gt;-->
-<!--            &lt;!&ndash;				<groupId>com.github.eirslett</groupId>&ndash;&gt;-->
-<!--            &lt;!&ndash;				<artifactId>frontend-maven-plugin</artifactId>&ndash;&gt;-->
-<!--            &lt;!&ndash;				<version>1.11.0</version>&ndash;&gt;-->
-<!--            &lt;!&ndash;				<configuration>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<workingDirectory>./</workingDirectory>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<nodeVersion>v16.16.0</nodeVersion>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<npmVersion>8.14.0</npmVersion>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<workingDirectory>frontend/</workingDirectory>&ndash;&gt;-->
-<!--            &lt;!&ndash;				</configuration>&ndash;&gt;-->
-<!--            &lt;!&ndash;				<executions>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<id>install node and npm</id>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;							<goal>install-node-and-npm</goal>&ndash;&gt;-->
-<!--            &lt;!&ndash;						</goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;					</execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<id>npm install</id>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;							<goal>npm</goal>&ndash;&gt;-->
-<!--            &lt;!&ndash;						</goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;					</execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<id>npm install -g @angular/cli</id>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;							<goal>npm</goal>&ndash;&gt;-->
-<!--            &lt;!&ndash;						</goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;					</execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<id>npm run add</id>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;							<goal>npm</goal>&ndash;&gt;-->
-<!--            &lt;!&ndash;						</goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;					</execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;					<execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<id>npm run build</id>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;							<goal>npm</goal>&ndash;&gt;-->
-<!--            &lt;!&ndash;						</goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;						<configuration>&ndash;&gt;-->
-<!--            &lt;!&ndash;							<arguments>run build</arguments>&ndash;&gt;-->
-<!--            &lt;!&ndash;						</configuration>&ndash;&gt;-->
-<!--            &lt;!&ndash;					</execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;				</executions>&ndash;&gt;-->
-<!--            &lt;!&ndash;			</plugin>&ndash;&gt;-->
-<!--            <plugin>-->
-<!--                <artifactId>maven-resources-plugin</artifactId>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>copy-resources</id>-->
-<!--                        <phase>validate</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>copy-resources</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>-->
-<!--                            <resources>-->
-<!--                                <resource>-->
-<!--                                    <directory>frontend/dist/frontend</directory>-->
-<!--                                </resource>-->
-<!--                            </resources>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
-
-
-<!--</project>-->
-
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -200,19 +34,48 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.security</groupId>-->
-<!--            <artifactId>spring-security-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.3</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.3</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
