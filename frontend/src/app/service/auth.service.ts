@@ -1,54 +1,36 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
-
-  // BASE_PATH: 'http://localhost:8080'
-  USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
-
-  public username: any;
-  public password: any;
+export class AuthService {
+  private BASE_PATH = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {
-
   }
 
-  authenticationService(username: String, password: String) {
-    return this.http.get(`http://localhost:8080/api/v1/basicauth`,
-      { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
-      this.username = username;
-      this.password = password;
-      this.registerSuccessfulLogin(username, password);
-    }));
+  login(usernameOrEmail: string, password: string): Observable<any> {
+    const loginPayload = {usernameOrEmail, password};
+    return this.http.post(`${this.BASE_PATH}/api/auth/login`, loginPayload);
   }
 
-  createBasicAuthToken(username: String, password: String) {
-    return 'Basic ' + window.btoa(username + ":" + password)
+  saveToken(token: string): void {
+    localStorage.setItem('accessToken', token);
   }
 
-  registerSuccessfulLogin(username: String, password: any) {
-    sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, password)
+  getToken(): string | null {
+    return localStorage.getItem('accessToken');
   }
 
-  logout() {
-    sessionStorage.removeItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME);
-    this.username = null;
-    this.password = null;
+  isLoggedIn(): boolean {
+    return this.getToken() !== null;
   }
 
-  isUserLoggedIn() {
-    let user = sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME)
-    if (user === null) return false
-    return true
+  logout(): void {
+    localStorage.removeItem('accessToken');
+    // Çıkış sonrası giriş sayfasına yönlendirme veya ilgili işlemleri burada yapabilirsiniz.
   }
 
-  getLoggedInUserName() {
-    let user = sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME)
-    if (user === null) return ''
-    return user
-  }
 }
