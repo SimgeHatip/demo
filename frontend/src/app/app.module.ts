@@ -11,6 +11,7 @@ import {MenuComponent} from "./component/menu/menu.component";
 import {LoginComponent} from "./component/login/login.component";
 import {LogoutComponent} from './component/logout/logout.component';
 import {HttpInterceptorService} from "./service/HttpInterceptorService";
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {HttpInterceptorService} from "./service/HttpInterceptorService";
     MenuComponent,
     LoginComponent,
     LogoutComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -39,7 +39,8 @@ public class SpringSecurityConfig {
 //                    authorize.requestMatchers(HttpMethod.GET, "/api/**").hasAnyRole("ADMIN", "USER");
 //                    authorize.requestMatchers(HttpMethod.PATCH, "/api/**").hasAnyRole("ADMIN", "USER");
 //                    authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll();
-                    authorize.antMatchers("/**").permitAll();
+                    authorize.antMatchers("/api/auth/register").permitAll(); // Bu endpoint için yetkilendirme gerektirmiyor
+                    authorize.antMatchers("/**", "/register").permitAll();
                     authorize.antMatchers(HttpMethod.OPTIONS, "/**").permitAll();
                     authorize.anyRequest().authenticated();
                 }).httpBasic(Customizer.withDefaults());

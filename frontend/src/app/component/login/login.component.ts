@@ -37,4 +37,8 @@ export class LoginComponent implements OnInit {
       this.loginSuccess = false;
     });
   }
+
+  navigateRegister() {
+    this.router.navigate(["/register"]);
+  }
 }

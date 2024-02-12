@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {User} from "../modal/User";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class AuthService {
   login(usernameOrEmail: string, password: string): Observable<any> {
     const loginPayload = {usernameOrEmail, password};
     return this.http.post(`${this.BASE_PATH}/api/auth/login`, loginPayload);
+  }
+
+  registerUser(user: User) {
+    return this.http.post<any>(`${this.BASE_PATH}/api/auth/register`, user);
   }
 
   saveToken(token: string): void {
